@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.roomdbinjava.db.User;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyViewHolder> {
@@ -31,7 +29,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
     @NonNull
     @Override
     public UserListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.recycler_row, parent, false));
     }
 
@@ -43,7 +40,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.userList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -53,8 +50,8 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
         public MyViewHolder(View view) {
             super(view);
-            TextView tvFirstName = view.findViewById(R.id.tvFirstName);
-            TextView tvLastName = view.findViewById(R.id.tvLastName);
+            tvFirstName = view.findViewById(R.id.tvFirstName);
+            tvLastName = view.findViewById(R.id.tvLastName);
         }
     }
 }
